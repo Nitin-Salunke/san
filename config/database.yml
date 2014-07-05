@@ -1,0 +1,43 @@
+#Postgresql congiguration
+
+#Pre-requisites
+
+#  sudo -u postgres psql
+#
+#  set the postgresql user password if you haven't, it's just backslash password.
+#
+#  postgres=# \password
+
+#Create a new user and password and the user's new database:
+
+#  create user "root" with password 'pswd';
+#  create database "san_development" owner "root";
+#  create database "san_test" owner "root";
+
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: san_development
+  pool: 5
+  host: localhost
+  username: root
+  password: pswd
+
+
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: san_test
+  pool: 5
+  host: localhost
+  username: root
+  password: pswd
+
+
+production:
+  adapter: sqlite3
+  database: db/production.sqlite3
+  pool: 5
+  timeout: 5000

@@ -1,6 +1,8 @@
 Sanapp::Application.routes.draw do
 
-  root to: "home#index"
+  get "home/show"
+
+  root to: "home#show"
   devise_for :users, class_name: "Users::User"
   
   # The priority is based upon order of creation:
